@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosferatu Question</title>
+    <title>Taltoola🩸🍑</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
         
@@ -50,18 +50,29 @@
         }
 
         #fart-image {
-            display: none;
-            margin-top: 20px;
-            width: 400px;
-            height: auto;
-            box-shadow: 0px 0px 15px red;
-        }
+    opacity: 0; 
+    transition: opacity 2s ease-in-out; 
+    display: none; 
+    margin-top: 20px;
+    width: 400px;
+    height: auto;
+    box-shadow: 0px 0px 15px red;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 
         #envelope {
+            position: relative;
+            z-index: 9999;
             width: 200px;
             cursor: pointer;
             margin-top: 50px;
             transition: transform 0.5s ease-in-out;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         #envelope:hover {
@@ -79,39 +90,67 @@
             0% { transform: translateY(0); opacity: 1; }
             100% { transform: translateY(50px); opacity: 0; }
         }
+
+        #no-button {
+            position: relative;
+        }
+        #question-container h1 {
+    display: block !important; 
+   
+}
+
+     
     </style>
 </head>
 <body>
-    <img src="desktop/funnyTcode/blood1.png" class="blood-drip" style="top: 10px; left: 20%;">
-    <img src="desktop/funnyTcode/blood2.png" class="blood-drip" style="top: 50px; left: 50%; animation-delay: 1s;">
-    <img src="desktop/funnyTcode/blood3.png" class="blood-drip" style="top: 30px; right: 20%; animation-delay: 2s;">
+    <img src="blood1.png" class="blood-drip" style="top: 10px; left: 20%;">
+    <img src="blood1.png" class="blood-drip" style="top: 50px; left: 50%; animation-delay: 1s;">
+    <img src="blood1.png" class="blood-drip" style="top: 30px; right: 20%; animation-delay: 2s;">
     
-    <h1 id="question-text">Dear Tala, I've been building up the courage to ask you this question...</h1>
-    <h1 id="fart-question" class="big-text">Do it fart?</h1>
-    
-    <div class="button-container" id="button-container">
-        <button onclick="answerYes()">Yes</button>
-        <button onclick="answerNo()">No</button>
+    <div id="question-container" style="background-image: url('/LetterBg.png'); background-size: cover; background-position: center; padding: 20px; border-radius: 10px; display: none;">
+        <h1 id="question-text">Dear Tala,<br> I've been building up the courage to ask you this question...</h1>
+        <h1 id="fart-question" class="big-text">Do it fart?</h1>
+        <div class="button-container" id="button-container">
+            <button onclick="answerYes()">Yes</button>
+            <button id="no-button" onclick="answerNo()">No</button>
+        </div>
     </div>
+    
+    
+ 
 
-    <img id="fart-image" src="funnyTcode/dracooola.jpeg" alt="It do fart"> 
-    <img id="envelope" src="funnyTcode/envelope.png" alt="Open Letter" onclick="openLetter()">
+    <img id="fart-image" src="dracooola.jpeg" alt="It do fart" style="display: none;"> 
+    <img id="envelope" src="envelope.png" alt="Open Letter" onclick="openLetter()">
 
     <script>
-        function openLetter() {
-            document.getElementById("envelope").style.display = "none";
-            document.getElementById("question-text").style.display = "block";
-            document.getElementById("fart-question").style.display = "block";
-            document.getElementById("button
-n-container").style.display = "block";
-        }
+      function openLetter() {
+    console.log("Envelope clicked!"); 
 
-        function answerYes() {
-            document.getElementById("fart-image").style.display = "block";
-        }
+    document.getElementById("envelope").style.display = "none";
+
+    let container = document.getElementById("question-container");
+    container.style.display = "block";
+
+    document.getElementById("question-text").style.display = "block";
+    document.getElementById("fart-question").style.display = "block";
+
+    document.getElementById("button-container").style.display = "block";
+}
+
+
+function answerYes() {
+    let image = document.getElementById("fart-image");
+
+    image.style.display = "block"; 
+    setTimeout(() => { 
+        image.style.opacity = "1"; 
+    }, 10); 
+}
+
+
 
         function answerNo() {
-            alert("Lies! The night whispers the truth...");
+            alert("ik it fart dw");
         }
     </script>
 </body>
