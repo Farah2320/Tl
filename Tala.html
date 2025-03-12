@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosferatu Question</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+        
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: 'UnifrakturMaguntia', cursive;
+            padding-top: 10vh;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 50px;
+            display: none;
+            text-shadow: 4px 4px 10px red;
+        }
+
+        .big-text {
+            font-size: 80px;
+            color: crimson;
+            text-shadow: 6px 6px 15px red;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            display: none;
+        }
+
+        button {
+            font-size: 30px;
+            padding: 10px 30px;
+            margin: 10px;
+            background-color: darkred;
+            border: 2px solid white;
+            color: white;
+            cursor: pointer;
+            font-family: 'UnifrakturMaguntia', cursive;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        button:hover {
+            background-color: crimson;
+        }
+
+        #fart-image {
+            display: none;
+            margin-top: 20px;
+            width: 400px;
+            height: auto;
+            box-shadow: 0px 0px 15px red;
+        }
+
+        #envelope {
+            width: 200px;
+            cursor: pointer;
+            margin-top: 50px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        #envelope:hover {
+            transform: scale(1.1);
+        }
+
+        .blood-drip {
+            position: absolute;
+            width: 50px;
+            height: auto;
+            animation: drip 3s infinite;
+        }
+
+        @keyframes drip {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(50px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <img src="desktop/funnyTcode/blood1.png" class="blood-drip" style="top: 10px; left: 20%;">
+    <img src="desktop/funnyTcode/blood2.png" class="blood-drip" style="top: 50px; left: 50%; animation-delay: 1s;">
+    <img src="desktop/funnyTcode/blood3.png" class="blood-drip" style="top: 30px; right: 20%; animation-delay: 2s;">
+    
+    <h1 id="question-text">Dear Tala, I've been building up the courage to ask you this question...</h1>
+    <h1 id="fart-question" class="big-text">Do it fart?</h1>
+    
+    <div class="button-container" id="button-container">
+        <button onclick="answerYes()">Yes</button>
+        <button onclick="answerNo()">No</button>
+    </div>
+
+    <img id="fart-image" src="funnyTcode/dracooola.jpeg" alt="It do fart"> 
+    <img id="envelope" src="funnyTcode/envelope.png" alt="Open Letter" onclick="openLetter()">
+
+    <script>
+        function openLetter() {
+            document.getElementById("envelope").style.display = "none";
+            document.getElementById("question-text").style.display = "block";
+            document.getElementById("fart-question").style.display = "block";
+            document.getElementById("button
+n-container").style.display = "block";
+        }
+
+        function answerYes() {
+            document.getElementById("fart-image").style.display = "block";
+        }
+
+        function answerNo() {
+            alert("Lies! The night whispers the truth...");
+        }
+    </script>
+</body>
+</html>
